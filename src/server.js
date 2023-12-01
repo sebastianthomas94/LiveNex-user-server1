@@ -88,38 +88,38 @@ app.use(express.json());
 //   });
 // });
 
-app.post("/user/signin", signinService);
-app.post("/user/signup", signupService);
-app.get("/user/logout", (req, res) => {
+app.post("/api/user/signin", signinService);
+app.post("/api/user/signup", signupService);
+app.get("/api/user/logout", (req, res) => {
   console.log("logged out");
   res.end();
 });
-app.post("/user/reply", replyComment);
-app.get("/user/auth/google", Oauth);
-app.get("/user/auth/google/callback", googleCallBack);
-app.get("/user/auth/youtubeauth", authAndSave, youtubeAuth);
-app.get("/user/auth/youtube-oauth-callback", youtubeOauthCallback);
-app.get("/user/auth/fbauuth", authAndSave, facebookAuth);
-app.get("/user/auth/facebook-oauth-callback", facebookOauthCallback);
-app.get("/user/auth/twitchauth", authAndSave, twitchAuth);
-app.get("/user/auth/twitch-oauth-callback", twitchOauthCallback);
+app.post("/api/user/reply", replyComment);
+app.get("/api/user/auth/google", Oauth);
+app.get("/api/user/auth/google/callback", googleCallBack);
+app.get("/api/user/auth/youtubeauth", authAndSave, youtubeAuth);
+app.get("/api/user/auth/youtube-oauth-callback", youtubeOauthCallback);
+app.get("/api/user/auth/fbauuth", authAndSave, facebookAuth);
+app.get("/api/user/auth/facebook-oauth-callback", facebookOauthCallback);
+app.get("/api/user/auth/twitchauth", authAndSave, twitchAuth);
+app.get("/api/user/auth/twitch-oauth-callback", twitchOauthCallback);
 // app.post("/uploadvideo", upload.single('file'), uploadtos3);
-app.get("/user/issubscribed", authAndSave, checkIfSubscribed);
-app.get("/user/razor/orders", authAndSave, razorpay);
-app.post("/user/razor/success", authAndSave, razorpaySuccess);
-app.post("/user/admin/login", adminLogin);
-app.get("/user/admin/getusers", getUsers);
-app.post("/user/setlivedata", authAndSave, setLiveData);
-app.get("/user/getpastlives", authAndSave, getPastLives);
-app.get("/user/admin/deleteuser", deleteUser);
-app.get("/user/createticket", authAndSave, createTicket);
-app.get("/user/gettickets", authAndSave, gettickets);
-app.get("/user/admin/getalltickets", getAllTickets);
-app.post("/user/admin/sentticketreply", saveTicketReply);
-app.get("/user/getSubscriptionDetails", authAndSave, getSubscriptionDetails);
-app.post("/user/scheduleinfoupdate", authAndSave, scheduleInfoUpdate);
-app.get("/user/getUpcomingLives", authAndSave, getUpcomingLives);
-app.use("/user/uploadvideo", upload.single("file"), uploadtos3);
+app.get("/api/user/issubscribed", authAndSave, checkIfSubscribed);
+app.get("/api/user/razor/orders", authAndSave, razorpay);
+app.post("/api/user/razor/success", authAndSave, razorpaySuccess);
+app.post("/api/user/admin/login", adminLogin);
+app.get("/api/user/admin/getusers", getUsers);
+app.post("/api/user/setlivedata", authAndSave, setLiveData);
+app.get("/api/user/getpastlives", authAndSave, getPastLives);
+app.get("/api/user/admin/deleteuser", deleteUser);
+app.get("/api/user/createticket", authAndSave, createTicket);
+app.get("/api/user/gettickets", authAndSave, gettickets);
+app.get("/api/user/admin/getalltickets", getAllTickets);
+app.post("/api/user/admin/sentticketreply", saveTicketReply);
+app.get("/api/user/getSubscriptionDetails", authAndSave, getSubscriptionDetails);
+app.post("/api/user/scheduleinfoupdate", authAndSave, scheduleInfoUpdate);
+app.get("/api/user/getUpcomingLives", authAndSave, getUpcomingLives);
+app.use("/api/user/uploadvideo", upload.single("file"), uploadtos3);
 
 app.listen(process.env.PORT, () =>
   console.log(`User server started at ${process.env.PORT}`)
