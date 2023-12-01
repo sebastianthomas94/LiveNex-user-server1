@@ -65,7 +65,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: process.env.FRONT_END,
+    origin: [process.env.FRONT_END, 'http://livenex-frontend.s3-website.eu-north-1.amazonaws.com/'],
     methods: "*",
     credentials: true,
   })
